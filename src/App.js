@@ -15,9 +15,15 @@ class App extends Component {
       { id: "id-3", name: "Eden Clements", number: "645-17-79" },
       { id: "id-4", name: "Annie Copeland", number: "227-91-26" },
     ],
-    // name: "",
-    // number: "",
+
     filter: "",
+  };
+
+  deleteContact = (id) => {
+    const { contacts } = this.state;
+    this.setState({
+      contacts: contacts.filter((contact) => contact.id !== id),
+    });
   };
 
   getFilterValue = (e) => {
@@ -39,17 +45,9 @@ class App extends Component {
     const { contacts, filter } = this.state;
     return (
       <>
-        {/* <Feedback />
-       <TotalFeedback />
-       <RefactoredFeedback /> */}
         <Notification />
         <h2> Phonebook</h2>
-        <Form
-          contacts={contacts}
-          // name={name}
-          // number={number}
-          addContact={this.addContact}
-        />
+        <Form contacts={contacts} addContact={this.addContact} />
         <h2>Contacts</h2>
         <Filter filter={filter} getFilterValue={this.getFilterValue} />
         <Contacts contacts={this.getFilteredData()} />
@@ -57,15 +55,5 @@ class App extends Component {
     );
   }
 }
-// function App() {
-//   return (
-//     <>
-//       {/* <Feedback />
-//       <TotalFeedback />
-//       <RefactoredFeedback /> */}
-//       <Notification />
-//     </>
-//   );
-// }
 
 export default App;
