@@ -50,7 +50,10 @@ class App extends Component {
         <Form contacts={contacts} addContact={this.addContact} />
         <h2>Contacts</h2>
         <Filter filter={filter} getFilterValue={this.getFilterValue} />
-        <Contacts contacts={this.getFilteredData()} />
+        <Contacts
+          deleteContact={this.deleteContact}
+          contacts={this.getFilteredData()}
+        />
       </>
     );
   }
