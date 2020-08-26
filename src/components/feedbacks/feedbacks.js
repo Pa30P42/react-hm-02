@@ -7,8 +7,8 @@ class Feedback extends Component {
     bad: 0,
   };
 
-  changeValue = (e) => {
-    const name = e.target.name;
+  changeValue = (name) => {
+    // const name = e.target.name;
     this.setState((prevState) => ({ [name]: prevState[name] + 1 }));
   };
 
@@ -17,7 +17,11 @@ class Feedback extends Component {
       <>
         <div>
           <h2>Please leave your feedback</h2>
-          <button type="button" name="good" onClick={this.changeValue}>
+          <button
+            type="button"
+            name="good"
+            onClick={() => this.changeValue("good")}
+          >
             Good
           </button>
           <button type="button" name="neutral" onClick={this.changeValue}>

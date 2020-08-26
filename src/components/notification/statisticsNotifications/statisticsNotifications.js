@@ -6,7 +6,6 @@ const StatisticsNotification = ({ total, percentage, good, bad, neutral }) => {
       <h2>Statistics</h2>
       {total > 0 ? (
         <>
-          {" "}
           <p>Good</p>
           <span name="good">{good}</span>
           <p>Neutral</p>

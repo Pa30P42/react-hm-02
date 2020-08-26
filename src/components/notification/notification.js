@@ -8,8 +8,8 @@ class Notification extends Component {
     bad: 0,
   };
 
-  changeValue = (e) => {
-    const name = e.target.name;
+  changeValue = (name) => {
+    // const name = e.target.name;
     this.setState((prevState) => ({ [name]: prevState[name] + 1 }));
   };
   // this.countTotalFeedback()
@@ -31,7 +31,7 @@ class Notification extends Component {
           percentage={this.countPositiveFeedbackPercentage()}
           good={this.state.good}
           bad={this.state.bad}
-          netral={this.state.neutral}
+          neutral={this.state.neutral}
         />
       </>
     );

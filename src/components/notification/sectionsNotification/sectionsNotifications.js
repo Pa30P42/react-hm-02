@@ -18,7 +18,7 @@ const SectionNotification = ({
         percentage={percentage}
         good={good}
         bad={bad}
-        netral={neutral}
+        neutral={neutral}
       />
     </>
   );
